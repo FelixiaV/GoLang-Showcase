@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto;
+
+// numbers that denote the size of the data when serialized
+// can't use the same number twice in a single message
+// 1 - 15 -> 1 byte
+// 16 - 2047 -> 2 byte
+
+// protoc --proto_path=proto --proto_path=third_party --go_out=plugins=grpc: proto service.proto
+// third_party = include/google folder in the protoc program folder
+
+message Request {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message Response {
+    int64 result = 1;
+}
+
+service AddService {
+    rpc Add (Request) returns (Response);
+    rpc Multiply (Request) returns (Response);
+}

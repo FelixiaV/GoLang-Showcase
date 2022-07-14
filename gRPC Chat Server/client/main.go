@@ -1,4 +1,3 @@
-// https://www.youtube.com/watch?v=Y92WWaZJl24&list=WL&index=2&t=0s
 
 package main
 
